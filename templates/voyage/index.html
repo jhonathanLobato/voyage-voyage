@@ -1,16 +1,57 @@
+{% extends 'voyage/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyage Voyage</title>
-    <link rel="stylesheet" href="{% static "styles/output.css" %}">
-</head>
-<body class="bg-color-primary">
-    <h1 class="text-3xl font-bold text-color-creme">
-        Olá, Tailwind! aaaaaaaaaaaaaaaaa
-    </h1>
-</body>
-</html>
+{% block content %}
+    <!-- A IDEIA AQUI É COLOCAR UM CARROSSEL COM IMAGENS DAS 7 MARAVILHAS -->
+    <section class="flex justify-center">
+        <!--COLOCAR UMA SETA PARA A ESQUERDA-->
+        <button class="px-4 bg-gray-400 rounded-l-xl"><</button>
+        <div class="inline-block relative">
+            <img src="{% static 'imgs/7maravilhasdomundomoderno-capa.jpg' %}" alt="">
+            <div class="bg-gray-500 bottom-0 bg-opacity-60 absolute align-bottom">
+                <h3 class="text-white text-2xl font-bold">Taj-Mahal</h3>
+                <p class="text-white">O Taj-Mahal situado em Agra, na índia, sendo o mais conhecido dos monumentos do país. Foi anunciado em 2007 como uma das sete marvilhas do mundo moderno.</p>
+            </div>
+        </div>
+        <!--COLOCAR UMA SETA PARA A DIREITA-->
+        <button class="px-4 bg-gray-400 rounded-r-xl">></button>
+    </section>
+    <!--AQUI VAI VIM ALGUNS DESTINOS E CATEGORIAS-->
+    <section class="mx-4 my-6">
+        <h1 class="text-white text-4xl">Dicas de Viagens</h1>
+        <section class="flex flex-wrap justify-around">
+            <div>
+                <h1>rio de janeiro</h1>
+                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+            </div>
+            <div>
+                <h1>rio de janeiro</h1>
+                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+            </div>
+            <div>
+                <h1>rio de janeiro</h1>
+                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+            </div>
+            <div>
+                <h1>rio de janeiro</h1>
+                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+            </div>
+            <div>
+                <h1>rio de janeiro</h1>
+                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+            </div>
+            <div>
+                <h1>rio de janeiro</h1>
+                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+            </div>
+            <div>
+                <h1>rio de janeiro</h1>
+                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+            </div>
+            <div>
+                <h1>rio de janeiro</h1>
+                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+            </div>
+        </section>
+    </section>
+{% endblock %}

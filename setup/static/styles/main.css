@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-classic{
+    @apply border text-white font-bold rounded-lg bg-blue-500 py-1 px-4;
+}
