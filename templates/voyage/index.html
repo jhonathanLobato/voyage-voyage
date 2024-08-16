@@ -3,12 +3,12 @@
 
 {% block content %}
     <!-- A IDEIA AQUI É COLOCAR UM CARROSSEL COM IMAGENS DAS 7 MARAVILHAS -->
-    <section class="flex justify-center">
+    <section class="flex justify-center pb-4 mt-8">
         <!--COLOCAR UMA SETA PARA A ESQUERDA-->
         <button class="px-4 bg-gray-400 rounded-l-xl"><</button>
         <div class="inline-block relative">
             <img src="{% static 'imgs/7maravilhasdomundomoderno-capa.jpg' %}" alt="">
-            <div class="bg-gray-500 bottom-0 bg-opacity-60 absolute align-bottom">
+            <div class="bg-gray-500 bottom-0 bg-opacity-60 absolute align-bottom p-4">
                 <h3 class="text-white text-2xl font-bold">Taj-Mahal</h3>
                 <p class="text-white">O Taj-Mahal situado em Agra, na índia, sendo o mais conhecido dos monumentos do país. Foi anunciado em 2007 como uma das sete marvilhas do mundo moderno.</p>
             </div>
@@ -16,42 +16,139 @@
         <!--COLOCAR UMA SETA PARA A DIREITA-->
         <button class="px-4 bg-gray-400 rounded-r-xl">></button>
     </section>
+    
+    <!--AQUI VAI VIM O BOG-->
+    <!--SE O TITULO FOR MUITO GRANDE ELE VAI QUEBRAR LINHA E VAI DESALINHAR OS OUTROS CARDS-->
+    <h1 class="text-white text-4xl mx-4 my-8">Blog Voyage Voyage</h1>
+    <section class="grid grid-cols-4 gap-4 mx-6 my-6">
+        <div class="flex flex-col flex-wrap">
+            <div>
+                <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
+            </div>
+            <div>
+                <h1 class="text-2xl">As 7 Maravilhas do Mundo</h1>
+            </div>
+            <div>
+                <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col flex-wrap">
+            <div>
+                <img src="{% static 'imgs/esfinge-de-gize.jpg' %}" alt="Esfinge de Gize">
+            </div>
+            <div>
+                <h1 class="text-2xl">Os Destinos Internacionais Baratos</h1>
+            </div>
+            <div>
+                <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.
+                </p>
+            </div>
+        </div>
+        <!--AQUI ESTÁ O TEXTO LATERAL DIREITO-->
+        <div class="col-start-3 col-end-5 pl-8 pt-6">
+            <p class="text-3xl">Promoções Imperdível</p>
+            <h1 class="text-6xl">Visite nosso Blog</h1>
+            <h2 class="text-4xl">Conheça os Melhores Lugares do Mundo</h2>
+        </div>
+        <div class="flex flex-col flex-wrap">
+            <div>
+                <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
+            </div>
+            <div>
+                <h1 class="text-2xl">As 7 Maravilhas do Mundo</h1>
+            </div>
+            <div>
+                <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col flex-wrap">
+            <div>
+                <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
+            </div>
+            <div>
+                <h1 class="text-2xl">As 7 Maravilhas do Mundo</h1>
+            </div>
+            <div>
+                <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col flex-wrap">
+            <div>
+                <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
+            </div>
+            <div>
+                <h1 class="text-2xl">As 7 Maravilhas do Mundo</h1>
+            </div>
+            <div>
+                <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.
+                </p>
+            </div>
+        </div>
+    </section>
+    
     <!--AQUI VAI VIM ALGUNS DESTINOS E CATEGORIAS-->
-    <section class="mx-4 my-6">
-        <h1 class="text-white text-4xl">Dicas de Viagens</h1>
-        <section class="flex flex-wrap justify-around">
+    <h1 class="text-white text-4xl mx-4 my-8">Guia de Destinos</h1>
+    <section class="grid grid-cols-4 gap-4 mx-6 my-6">
+        <div class="col-start-1 col-end-3 pt-6">
+            <p class="text-3xl">Promoções Imperdível</p>
+            <h1 class="text-6xl">Pacotes de viagens</h1>
+            <h2 class="text-4xl">Planeje Suas Férias</h2>
+        </div>
+
+        <div class="flex flex-col flex-wrap">
             <div>
-                <h1>rio de janeiro</h1>
-                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+                <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
             </div>
             <div>
-                <h1>rio de janeiro</h1>
-                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+                <h1 class="text-2xl">Rio de Janeiro</h1>
+                <p>25/09/2024 - 01/10/2024</p>
             </div>
             <div>
-                <h1>rio de janeiro</h1>
-                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+                <p class="text-white">Pacotes a partir de</p>
+                <p>R$ 130</p>
+            </div>
+        </div>
+        <div class="flex flex-col flex-wrap">
+            <div>
+                <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
             </div>
             <div>
-                <h1>rio de janeiro</h1>
-                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+                <h1 class="text-2xl">Rio de Janeiro</h1>
+                <p>25/09/2024 - 01/10/2024</p>
             </div>
             <div>
-                <h1>rio de janeiro</h1>
-                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+                <p class="text-white">Pacotes a partir de</p>
+                <p>R$ 130</p>
+            </div>
+        </div>
+        <div class="flex flex-col flex-wrap">
+            <div>
+                <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
             </div>
             <div>
-                <h1>rio de janeiro</h1>
-                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+                <h1 class="text-2xl">Rio de Janeiro</h1>
+                <p>25/09/2024 - 01/10/2024</p>
             </div>
             <div>
-                <h1>rio de janeiro</h1>
-                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+                <p class="text-white">Pacotes a partir de</p>
+                <p>R$ 130</p>
+            </div>
+        </div>
+        <div class="flex flex-col flex-wrap">
+            <div>
+                <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
             </div>
             <div>
-                <h1>rio de janeiro</h1>
-                <p>jdahfajksfjasfjakhsfajkshdajkshd</p>
+                <h1 class="text-2xl">Rio de Janeiro</h1>
+                <p>25/09/2024 - 01/10/2024</p>
             </div>
-        </section>
+            <div>
+                <p class="text-white">Pacotes a partir de</p>
+                <p>R$ 130</p>
+            </div>
+        </div>
     </section>
 {% endblock %}
