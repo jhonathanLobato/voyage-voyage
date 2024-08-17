@@ -66,31 +66,16 @@
         </div>
     </section>
     <section class="col-start-2 col-end-5">
-        <div class="mb-4 flex">
-            <div class="mr-4 overflow-hidden">
+        <div class="mb-4 grid grid-cols-4">
+            <div class="mr-4 overflow-hidden col-start-1 col-end-3">
                 <a href="{% url 'blog_pagina' %}"><img class="zoom" src="{% static 'imgs/esfinge-de-gize.jpg' %}" alt=""></a>
             </div>
-            <div class="flex flex-col">
-                <a href="{% url 'blog_pagina' %}" class="text-white text-2xl hover:text-color-secondary">Dicas para escolher seu destino no Brasil</a>
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quos numquam sunt iste. Quos perferendis quod perspiciatis autem necessitatibus optio quibusdam vitae obcaecati veritatis? Officia ea aperiam quidem dolorem beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dicta rem facere. Voluptatum nulla sint fuga perferendis sapiente dolor voluptatem amet excepturi doloremque minus officiis veniam accusamus, quae deleniti dolores.</p>
-            </div>
-        </div>
-        <div class="mb-4 flex">
-            <div class="mr-4">
-                <a href="#"><img src="{% static 'imgs/esfinge-de-gize.jpg' %}" alt=""></a>
-            </div>
-            <div class="flex flex-col">
-                <h1 class="text-white text-2xl">Dicas para escolher seu destino no Brasil</h1>
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quos numquam sunt iste. Quos perferendis quod perspiciatis autem necessitatibus optio quibusdam vitae obcaecati veritatis? Officia ea aperiam quidem dolorem beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dicta rem facere. Voluptatum nulla sint fuga perferendis sapiente dolor voluptatem amet excepturi doloremque minus officiis veniam accusamus, quae deleniti dolores.</p>
-            </div>
-        </div>
-        <div class="mb-4 flex">
-            <div class="mr-4">
-                <a href="#"><img src="{% static 'imgs/esfinge-de-gize.jpg' %}" alt=""></a>
-            </div>
-            <div class="flex flex-col">
-                <h1 class="text-white text-2xl">Dicas para escolher seu destino no Brasil</h1>
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quos numquam sunt iste. Quos perferendis quod perspiciatis autem necessitatibus optio quibusdam vitae obcaecati veritatis? Officia ea aperiam quidem dolorem beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dicta rem facere. Voluptatum nulla sint fuga perferendis sapiente dolor voluptatem amet excepturi doloremque minus officiis veniam accusamus, quae deleniti dolores.</p>
+            <div class="col-start-3 col-end-5">
+                <div class="flex flex-col">
+                    <a href="{% url 'blog_pagina' %}" class="text-white text-2xl hover:text-color-secondary">Dicas para escolher seu destino no Brasil</a>
+                    <h2>12/04/2024</h2>
+                    <p class="text-white text-lg limitando">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor quisquam dignissimos omnis itaque, suscipit nostrum voluptate. Quod sint perspiciatis fugit corrupti, illum labore doloremque quo eligendi aperiam dolorum repellendus obcaecati.</p>
+                </div>
             </div>
         </div>
     </section>
