@@ -6,7 +6,7 @@
     <div class="grid grid-cols-5 grid-rows-2 mt-6 gap-2">
         <section class="col-start-2 col-end-4 row-start-1 row-end-3">
             <div class="inline-block relative overflow-hidden">
-                <a href="#"><img class="zoom object-cover h-auto rounded-lg" src="{% static 'imgs/'%}{{ post_destaque1.imagem }}" alt="{{ post_destaque1.titulo }}"></a>
+                <a href="#"><img class="zoom object-cover h-auto rounded-lg" src="{{ post_destaque1.imagem.url }}" alt="{{ post_destaque1.titulo }}"></a>
                 <div class="bottom-0 absolute align-bottom p-2">
                     <a href="#"><h3 class="text-white text-3xl font-bold">{{ post_destaque1.titulo }}</h3></a>
                 </div>
@@ -14,7 +14,7 @@
         </section>
         <section class="col-start-4 col-end-5 row-start-1 row-end-2">
             <div class="inline-block relative overflow-hidden">
-                <a href="#"><img class="zoom object-cover rounded-lg" src="{% static 'imgs/'%}{{ post_destaque2.imagem }}" alt="{{ post_destaque2.titulo }}"></a>
+                <a href="#"><img class="zoom object-cover rounded-lg" src="{{ post_destaque2.imagem.url }}" alt="{{ post_destaque2.titulo }}"></a>
                 <div class="bottom-0 absolute align-bottom p-2">
                     <a href="#"><h3 class="text-white text-lg font-bold">{{ post_destaque2.titulo }}</h3></a>
                 </div>
@@ -22,7 +22,7 @@
         </section>
         <section class="col-start-4 col-end-5 row-start-2 row-end-3">
             <div class="inline-block relative overflow-hidden">
-                <a href="#"><img class="zoom object-cover rounded-lg" src="{% static 'imgs/'%}{{ post_destaque3.imagem }}" alt="{{ post_destaque3.titulo }}"></a>
+                <a href="#"><img class="zoom object-cover rounded-lg" src="{{ post_destaque3.imagem.url }}" alt="{{ post_destaque3.titulo }}"></a>
                 <div class="bottom-0 absolute align-bottom p-2">
                     <a href="#"><h3 class="text-white text-lg font-bold">{{ post_destaque3.titulo }}</h3></a>
                 </div>
@@ -56,13 +56,13 @@
                 {% for preview_rep in preview %}
                     <div class="mb-4 grid grid-cols-4">
                         <div class="mr-4 overflow-hidden col-start-1 col-end-3">
-                            <a href="{% url 'blog_pagina' %}"><img class="zoom object-cover rounded-lg" src="{% static 'imgs/'%}{{ preview_rep.imagem }}" alt="{{ preview_rep.titulo }}"></a>
+                            <a href="{% url 'blog_pagina' preview_rep.id %}"><img class="zoom object-cover rounded-lg" src="{{ preview_rep.imagem.url }}" alt="{{ preview_rep.titulo }}"></a>
                         </div>
                         <div class="col-start-3 col-end-5">
                             <div class="flex flex-col">
-                                <a href="{% url 'blog_pagina' %}" class="text-white text-2xl hover:font-semibold">{{ preview_rep.titulo }}</a>
+                                <a href="{% url 'blog_pagina' preview_rep.id %}" class="text-white text-2xl hover:font-semibold">{{ preview_rep.titulo }}</a>
                                 <h2 class="text-white text-base">{{ preview_rep.data_criacao }}</h2>
-                                <p class="text-white text-lg limitando">{{ preview_rep.descricao }}</p>
+                                <p class="text-white text-lg description">{{ preview_rep.descricao }}</p>
                             </div>
                         </div>
                     </div>

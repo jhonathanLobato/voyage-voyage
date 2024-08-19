@@ -3,11 +3,15 @@
 {% load static %}
 
 {% block content %}
-<div>
+<div class="flex mt-12">
     <section class="my-0 mx-auto">
-        <div>
-            <h1>Tudo que você precisa saber para planejar sua viagem aos Estados Unidos</h1>
+        <div class="">
+            
+            <img class="" src="{{ pagina.imagem.url }}" alt="{{ pagina.titulo }}">
+            <h1 class="text-white text-center font-serif text-5xl">{{ pagina.titulo }}</h1>
         </div>
+        
+            <p class="px-16">{{ pagina.descricao }}</p>
         
     </section>
 </div>

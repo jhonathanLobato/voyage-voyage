@@ -37,9 +37,13 @@
                     {% if forloop.counter <= 2 %}
                         <div class="col-span-1">
                             <div class="flex flex-col">
-                                <img class="relative w-[313px] h-[190px] overflow-hidden rounded-lg zoom object-cover" src="{% static 'imgs/'%}{{ blogs.imagem }}" alt="Cristo Redentor">
-                                <h1 class="text-2xl limitando_titulo font-serif">{{ blogs.titulo }}</h1>
-                                <h2 class="text-white text-sm font-serif">{{ blogs.data_criacao }}</h2>
+                                {% if blogs.imagem == "" or blogs.imagem == null %}
+                                    <a href="#"><img class="relative w-[313px] h-[190px] overflow-hidden rounded-lg zoom object-cover" src="{% static 'imgs/img-not-found.jpg'%}" alt="Sem imagem"></a>
+                                {% else %}
+                                    <a href="#"><img class="relative w-[313px] h-[190px] overflow-hidden rounded-lg zoom object-cover" src="{{ blogs.imagem.url }}" alt="Sem imagem"></a>
+                                    <h1 class="text-2xl limitando_titulo font-serif">{{ blogs.titulo }}</h1>
+                                {% endif %}
+                                    <h2 class="text-white text-sm font-serif">{{ blogs.data_criacao }}</h2>
                                 <p class="description text-white text-base font-serif">{{ blogs.descricao }}</p>
                             </div>
                         </div>
@@ -54,8 +58,12 @@
                     {% else %}
                         <div class="col-span-1">
                             <div class="flex flex-col">
-                                <img class="relative w-[313px] h-[190px] overflow-hidden zoom object-cover rounded-lg" src="{% static 'imgs/'%}{{ blogs.imagem }}" alt="Cristo Redentor">
-                                <h1 class="text-2xl limitando_titulo font-serif">{{ blogs.titulo }}</h1>
+                                {% if blogs.imagem == "" or blogs.imagem == null %}
+                                    <a href="#"><img class="relative w-[313px] h-[190px] overflow-hidden rounded-lg zoom object-cover" src="{% static 'imgs/img-not-found.jpg'%}" alt="Sem imagem"></a>
+                                {% else %}
+                                    <a href="#"><img class="relative w-[313px] h-[190px] overflow-hidden rounded-lg zoom object-cover" src="{{ blogs.imagem.url }}" alt="Sem imagem"></a>
+                                {% endif %}
+                                    <h1 class="text-2xl limitando_titulo font-serif">{{ blogs.titulo }}</h1>
                                 <h2 class="text-white text-sm font-serif">{{ blogs.data_criacao }}</h2>
                                 <p class="description text-white text-base font-serif">{{ blogs.descricao }}</p>
                             </div>
