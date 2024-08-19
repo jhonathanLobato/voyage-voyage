@@ -8,7 +8,12 @@ module.exports = {
         'color-secondary': '#FF5733', // laranjão
         'color-creme': '#FFF5E1',
         'color-cinza': '#2F4F4F',
-      }
+      },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+        mono: ['Menlo', 'monospace'],
+      },
     },
   },
   plugins: [],

@@ -2,96 +2,113 @@
 {% load static %}
 
 {% block content %}
+    <link rel="stylesheet" href="{% static 'js/main.js' %}">
     <!-- A IDEIA AQUI É COLOCAR UM CARROSSEL COM IMAGENS DAS 7 MARAVILHAS -->
-    <section class="flex justify-center pb-4 mt-8">
-        <!--COLOCAR UMA SETA PARA A ESQUERDA-->
-        <button class="px-4 bg-gray-400 bg-opacity-30 rounded-l-lg"><</button>
-        <div class="inline-block relative">
-            <img src="{% static 'imgs/7maravilhasdomundomoderno-capa.jpg' %}" alt="">
-            <div class="bg-gray-500 bottom-0 bg-opacity-60 absolute align-bottom p-4">
-                <h3 class="text-white text-2xl font-bold">Taj-Mahal</h3>
-                <p class="text-white">O Taj-Mahal situado em Agra, na índia, sendo o mais conhecido dos monumentos do país. Foi anunciado em 2007 como uma das sete marvilhas do mundo moderno.</p>
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="image-container">
+                    <img src="{% static 'imgs/7maravilhasdomundomoderno-capa.jpg' %}" alt="Sete Maravilhas do Mundo" class="swiper-image">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="image-container">
+                    <img src="{% static 'imgs/coliseu.jpg' %}" alt="Coliseu" class="swiper-image">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="image-container">
+                    <img src="{% static 'imgs/muralha-china.jpg' %}" alt="Muralha da China" class="swiper-image">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="image-container">
+                    <img src="{% static 'imgs/machu-picchu.jpg' %}" alt="Machu Picchu" class="swiper-image">
+                </div>
             </div>
         </div>
-        <!--COLOCAR UMA SETA PARA A DIREITA-->
-        <button class="px-4 bg-gray-400 bg-opacity-30 rounded-r-lg">></button>
     </section>
-    
     <!--AQUI VAI VIM O BOG-->
     <!--SE O TITULO FOR MUITO GRANDE ELE VAI QUEBRAR LINHA E VAI DESALINHAR OS OUTROS CARDS-->
-    <h1 class="text-white text-4xl mx-4 my-8">Blog Voyage Voyage</h1>
-    <section class="grid grid-cols-4 gap-4 mx-6 my-6">
-        <div class="flex flex-col flex-wrap">
-            <img class="rounded-lg" src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
-            <h1 class="text-2xl">As 7 Maravilhas do Mundo</h1>
-            <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.</p>
-        </div>
-        <div class="flex flex-col flex-wrap">
-            <img src="{% static 'imgs/esfinge-de-gize.jpg' %}" alt="Esfinge de Gize">
-            <h1 class="text-2xl">Os Destinos Internacionais Baratos</h1>
-            <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.</p>
-        </div>
-        <!--AQUI ESTÁ O TEXTO LATERAL DIREITO-->
-        <div class="col-start-3 col-end-5 pl-8 pt-6">
-            <p class="text-3xl">Promoções Imperdível</p>
-            <h1 class="text-6xl">Visite nosso Blog</h1>
-            <h2 class="text-4xl">Conheça os Melhores Lugares do Mundo</h2>
-        </div>
-        <div class="flex flex-col flex-wrap">
-            <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
-            <h1 class="text-2xl">As 7 Maravilhas do Mundo</h1>
-            <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.
-            </p>
-        </div>
-        <div class="flex flex-col flex-wrap">
-            <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
-            <h1 class="text-2xl">As 7 Maravilhas do Mundo</h1>
-            <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.
-            </p>
-        </div>
-        <div class="flex flex-col flex-wrap">
-            <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
-            <h1 class="text-2xl">As 7 Maravilhas do Mundo</h1>
-            <p class="description text-white">Estas são as maravilhas eleitas em uma votação organizada pela New7Wonders Foundation em 2007. São obras arquitetônicas impressionantes construídas em diferentes períodos históricos.
-            </p>
-        </div>
-    </section>
-    
+    <h1 class="text-white text-5xl mx-4 my-8 font-serif">Blog Voyage Voyage</h1>
+        <section class="grid grid-cols-4 grid-rows-* gap-4 mx-6 my-6">
+            {% if blogs %}
+                {% for blogs in blogs|slice:":6" %}
+                    {% if forloop.counter <= 2 %}
+                        <div class="col-span-1">
+                            <div class="flex flex-col">
+                                <img class="relative w-[313px] h-[190px] overflow-hidden rounded-lg zoom object-cover" src="{% static 'imgs/'%}{{ blogs.imagem }}" alt="Cristo Redentor">
+                                <h1 class="text-2xl limitando_titulo font-serif">{{ blogs.titulo }}</h1>
+                                <h2 class="text-white text-sm font-serif">{{ blogs.data_criacao }}</h2>
+                                <p class="description text-white text-base font-serif">{{ blogs.descricao }}</p>
+                            </div>
+                        </div>
+                        <!--AQUI ESTÁ O TEXTO LATERAL DIREITO-->
+                        {% if forloop.counter == 2 %}
+                            <div class="col-span-2 pl-8 pt-6">
+                                <p class="text-3xl font-serif">Promoções Imperdível</p>
+                                <h1 class="text-6xl font-serif">Visite nosso Blog</h1>
+                                <h2 class="text-4xl font-serif">Conheça os Melhores Lugares do Mundo</h2>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <div class="col-span-1">
+                            <div class="flex flex-col">
+                                <img class="relative w-[313px] h-[190px] overflow-hidden zoom object-cover rounded-lg" src="{% static 'imgs/'%}{{ blogs.imagem }}" alt="Cristo Redentor">
+                                <h1 class="text-2xl limitando_titulo font-serif">{{ blogs.titulo }}</h1>
+                                <h2 class="text-white text-sm font-serif">{{ blogs.data_criacao }}</h2>
+                                <p class="description text-white text-base font-serif">{{ blogs.descricao }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </section>
     <!--AQUI VAI VIM ALGUNS DESTINOS E CATEGORIAS-->
-    <h1 class="text-white text-4xl mx-4 my-8">Guia de Destinos</h1>
+    <h1 class="text-white text-5xl mx-4 my-8 font-serif">Guia de Destinos</h1>
     <section class="grid grid-cols-4 gap-4 mx-6 my-6">
         <div class="col-start-1 col-end-3 pt-6">
-            <p class="text-3xl">Promoções Imperdível</p>
-            <h1 class="text-6xl">Pacotes de viagens</h1>
-            <h2 class="text-4xl">Planeje Suas Férias</h2>
+            <p class="text-3xl font-serif">Promoções Imperdível</p>
+            <h1 class="text-6xl font-serif">Pacotes de viagens</h1>
+            <h2 class="text-4xl font-serif">Planeje Suas Férias</h2>
         </div>
-        <div class="flex flex-col flex-wrap">
-            <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
-            <h1 class="text-2xl">Rio de Janeiro</h1>
-            <p>25/09/2024 - 01/10/2024</p>
-            <p class="text-white">Pacotes a partir de</p>
-            <p>R$ 130</p>
-        </div>
-        <div class="flex flex-col flex-wrap">
-            <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
-            <h1 class="text-2xl">Rio de Janeiro</h1>
-            <p>25/09/2024 - 01/10/2024</p>
-            <p class="text-white">Pacotes a partir de</p>
-            <p>R$ 130</p>
-        </div>
-        <div class="flex flex-col flex-wrap">
-            <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
-            <h1 class="text-2xl">Rio de Janeiro</h1>
-            <p>25/09/2024 - 01/10/2024</p>
-            <p class="text-white">Pacotes a partir de</p>
-            <p>R$ 130</p>
-        </div>
-        <div class="flex flex-col flex-wrap">
-            <img src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
-            <h1 class="text-2xl">Rio de Janeiro</h1>
-            <p>25/09/2024 - 01/10/2024</p>
-            <p class="text-white">Pacotes a partir de</p>
-            <p>R$ 130</p>
+        <div class="flex flex-col">
+            <div class="border rounded-2xl">
+                <img class="rounded-t-2xl" src="{% static 'imgs/cristo-redentor.jpg' %}" alt="Cristo Redentor">
+                <div class="p-4">
+                    <h1 class="text-2xl font-semibold font-serif">Rio de Janeiro</h1>
+                    <p class="text-lg font-serif">25/09/2024 - 01/10/2024</p>
+                </div>
+                <div class="p-4 mt-6">
+                    <p class="text-white text-sm font-serif">Pacotes a partir de</p>
+                    <p class="text-lg font-serif">R$ 130</p>
+                </div>
+                <div class="p-2">
+                    <a class="border rounded-2xl bg-gray-800 p-2 font-serif text-white" href="#">Comprar</a>
+                </div>    
+                </div>
+            </div>
         </div>
     </section>
+    <!--TENHO QUE SABER PQ NÃO FUNCIONA O ARQUIVO JS, ENQUANTO ISSO VAI FICAR AQUI-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    </script>
+    
 {% endblock %}
